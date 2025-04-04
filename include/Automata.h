@@ -1,6 +1,6 @@
 // Copyright 2025 ArriVeder4i
-#ifndef AUTOMATA_H
-#define AUTOMATA_H
+#ifndef INCLUDE_AUTOMATA_H_
+#define INCLUDE_AUTOMATA_H_
 
 #include <string>
 #include <vector>
@@ -36,4 +36,4 @@ public:
     int getChange();
 };
 
-#endif  // AUTOMATA_H
+#endif  // INCLUDE_AUTOMATA_H_

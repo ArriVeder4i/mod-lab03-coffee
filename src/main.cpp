@@ -4,6 +4,7 @@
 #include <locale>
 
 int main() {
+    std::locale::global(std::locale("ru_RU.UTF-8"));
     std::cout.imbue(std::locale());
     std::wcout.imbue(std::locale());
 

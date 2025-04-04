@@ -83,7 +83,8 @@ void Automata::cook() {
     if (state == STATES::CHECK && check()) {
         state = STATES::COOK;
         cash -= prices[selectedDrink];
-        std::cout << "Preparing " << menu[selectedDrink] << " - " << prices[selectedDrink] << "\n";
+        std::cout << "Preparing " << menu[selectedDrink] << " - "
+            << prices[selectedDrink] << "\n";
     }
 }
 
