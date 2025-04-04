@@ -1,6 +1,8 @@
+// Copyright 2025 ArriVeder4i
 #include "Automata.h"
 #include <gtest/gtest.h>
 #include <locale>
+#include <iostream>
 
 TEST(AutomataTest, InitialState) {
     Automata vendingMachine;
@@ -121,7 +123,7 @@ TEST(AutomataTest, GetMenu) {
 TEST(AutomataTest, ReturnChange) {
     Automata vendingMachine;
     vendingMachine.on();
-    vendingMachine.coin(25); 
+    vendingMachine.coin(25);
     vendingMachine.choice(1);
     if (vendingMachine.check()) {
         vendingMachine.cook();
@@ -134,7 +136,7 @@ TEST(AutomataTest, ReturnChange) {
 TEST(AutomataTest, NoChange) {
     Automata vendingMachine;
     vendingMachine.on();
-    vendingMachine.coin(15); 
+    vendingMachine.coin(15);
     vendingMachine.choice(1);
     if (vendingMachine.check()) {
         vendingMachine.cook();
@@ -145,7 +147,7 @@ TEST(AutomataTest, NoChange) {
 }
 
 int main(int argc, char** argv) {
-    std::setlocale(LC_ALL, "Russian");
+    std::locale::global(std::locale("ru_RU.UTF-8"));
     std::cout.imbue(std::locale());
     std::wcout.imbue(std::locale());
     ::testing::InitGoogleTest(&argc, argv);

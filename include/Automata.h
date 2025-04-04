@@ -1,4 +1,4 @@
-#pragma once
+// Copyright 2025 ArriVeder4i
 #ifndef AUTOMATA_H
 #define AUTOMATA_H
 
@@ -33,7 +33,7 @@ public:
     void cancel();
     void cook();
     void finish();
-    int getChange(); // сдача
+    int getChange();
 };
 
-#endif // AUTOMATA_H
+#endif  // AUTOMATA_H
