@@ -4,34 +4,33 @@
 #include <locale>
 
 int main() {
-    std::locale::global(std::locale("ru_RU.UTF-8"));
-    std::cout.imbue(std::locale());
-    std::wcout.imbue(std::locale());
+  std::locale::global(std::locale("ru_RU.UTF-8"));
+  std::cout.imbue(std::locale());
+  std::wcout.imbue(std::locale());
 
-    Automata vendingMachine;
+  Automata vendingMachine;
 
-    vendingMachine.on();
+  vendingMachine.on();
 
-    std::cout << "Menu:\n";
-    auto menu = vendingMachine.getMenu();
-    for (const auto& item : menu) {
-        std::cout << item << "\n";
-    }
+  std::cout << "Menu:\n";
+  auto menu = vendingMachine.getMenu();
+  for (const auto& item : menu) {
+    std::cout << item << "\n";
+  }
 
-    vendingMachine.coin(25);
+  vendingMachine.coin(25);
 
-    vendingMachine.choice(1);
+  vendingMachine.choice(1);
 
-    if (vendingMachine.check()) {
-        vendingMachine.cook();
-        vendingMachine.finish();
-    }
-    else {
-        std::cout << "Insufficient funds for purchase.\n";
-        vendingMachine.cancel();
-    }
+  if (vendingMachine.check()) {
+    vendingMachine.cook();
+    vendingMachine.finish();
+  } else {
+    std::cout << "Insufficient funds for purchase.\n";
+    vendingMachine.cancel();
+  }
 
-    vendingMachine.off();
+  vendingMachine.off();
 
-    return 0;
+  return 0;
 }
