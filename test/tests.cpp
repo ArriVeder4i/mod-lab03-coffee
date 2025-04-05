@@ -146,10 +146,3 @@ TEST(AutomataTest, NoChange) {
     }
 }
 
-int main(int argc, char** argv) {
-    std::locale::global(std::locale("ru_RU.UTF-8"));
-    std::cout.imbue(std::locale());
-    std::wcout.imbue(std::locale());
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}
